@@ -153,9 +153,11 @@
   });
 
   game.addEventListener('touchstart', (e) => {
+  if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'BUTTON') {
     e.preventDefault();
     jump();
-  });
+  }
+});
 
   function moveObstacle() {
     obstacleX -= 5;
